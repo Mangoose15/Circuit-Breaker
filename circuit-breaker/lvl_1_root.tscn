@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://clc3073gth78k"]
+
+[ext_resource type="PackedScene" uid="uid://ir3256q0qd43" path="res://randombox.tscn" id="1_skhqh"]
+[ext_resource type="PackedScene" uid="uid://dvh3ibvm0axna" path="res://guy.tscn" id="2_ym1sk"]
+[ext_resource type="PackedScene" uid="uid://3uomfqr1rf2v" path="res://cointyshi.tscn" id="4_o1p2a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5sbi7"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5sbi7"]
+size = Vector3(30, 1, 30)
+
+[node name="Lvl1Root" type="Node3D" unique_id=1232347381]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1704364751]
+transform = Transform3D(0.9998333, 0.012762541, -0.01305836, 0, 0.71516085, 0.6989599, 0.018259332, -0.69884336, 0.71504164, -0.24588013, 12.17488, 18.76852)
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=992797103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=305229667]
+mesh = SubResource("BoxMesh_5sbi7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=467496479]
+shape = SubResource("BoxShape3D_5sbi7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1223521825]
+transform = Transform3D(-0.063001305, -0.9980135, 0, 0.22406305, -0.014144364, 0.97447205, -0.9725362, 0.06139301, 0.22450905, 0, 28.114847, 12.592045)
+shadow_enabled = true
+
+[node name="boxes" type="Node3D" parent="." unique_id=163444415]
+
+[node name="randombox" parent="boxes" unique_id=599289647 instance=ExtResource("1_skhqh")]
+transform = Transform3D(0.71277505, 0.5056253, -0.48610163, 0, 0.693052, 0.7208876, 0.7013927, -0.5138307, 0.49399018, 0, 7.898301, 0)
+metadata/_edit_group_ = true
+
+[node name="randombox2" parent="boxes" unique_id=1336062215 instance=ExtResource("1_skhqh")]
+transform = Transform3D(0.67408806, 0.43268502, -0.5986561, 0.32498744, 0.5540817, 0.766405, 0.66331625, -0.7111801, 0.2328826, -3.47896, 7.898301, -2.6236858)
+metadata/_edit_group_ = true
+
+[node name="randombox3" parent="boxes" unique_id=324052768 instance=ExtResource("1_skhqh")]
+transform = Transform3D(0.71277505, 0.5056253, -0.48610163, 0, 0.693052, 0.7208876, 0.7013927, -0.5138307, 0.49399018, 0, 10.034532, -3.1434355)
+metadata/_edit_group_ = true
+
+[node name="randombox4" parent="boxes" unique_id=29261997 instance=ExtResource("1_skhqh")]
+transform = Transform3D(0.6845606, 0.2925474, -0.66767716, 0.19855745, 0.80647004, 0.5569389, 0.7013927, -0.5138307, 0.49399018, 4.6422796, 6.64384, 0)
+metadata/_edit_group_ = true
+
+[node name="guy" parent="." unique_id=950264174 instance=ExtResource("2_ym1sk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.2125688, 7.7769127)
+
+[node name="cointyshi" parent="." unique_id=1652209011 instance=ExtResource("4_o1p2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3.9254923)

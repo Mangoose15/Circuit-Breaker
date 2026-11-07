@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://3uomfqr1rf2v"]
+
+[ext_resource type="Script" uid="uid://1b2gtxrj0hlt" path="res://cointyshi.gd" id="1_68udp"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5sbi7"]
+height = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5sbi7"]
+size = Vector3(1, 1, 0.1)
+
+[node name="cointyshi" type="Area3D" unique_id=1652209011]
+script = ExtResource("1_68udp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=348351423]
+transform = Transform3D(1, 0, 0, 0, -0.007677285, -0.99997056, 0, 0.99997056, -0.007677285, 0, 0.004260063, 0)
+mesh = SubResource("CylinderMesh_5sbi7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=557221641]
+shape = SubResource("BoxShape3D_5sbi7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
